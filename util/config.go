@@ -25,7 +25,7 @@ func LoadConfig(path string) (config Config, err error) {
 			DBSource:      "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable",
 			ServerAddress: "0.0.0.0:8080",
 		}
-		return
+		return config, nil
 	}
 
 	err = viper.Unmarshal(&config)
