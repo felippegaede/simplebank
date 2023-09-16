@@ -20,6 +20,11 @@ func LoadConfig(path string) (config Config, err error) {
 
 	err = viper.ReadInConfig()
 	if err != nil {
+		config = Config{
+			DBDriver:      "postgres",
+			DBSource:      "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable",
+			ServerAddress: "0.0.0.0:8080",
+		}
 		return
 	}
 
