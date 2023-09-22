@@ -249,7 +249,7 @@ func TestCreateAccountAPI(t *testing.T) {
 		},
 		{
 			name: "InvalidCurrency",
-			body: gin.H{"owner": account.Owner, "currency": "BRL"},
+			body: gin.H{"owner": account.Owner, "currency": "CAD"},
 			buildStubs: func(store *mockdb.MockStore) {
 				store.EXPECT().CreateAccount(gomock.Any(), gomock.Any()).Times(0)
 			},
