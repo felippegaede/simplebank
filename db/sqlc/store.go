@@ -51,6 +51,7 @@ type TransferTxParams struct {
 	Amount        int64 `json:"amount"`
 }
 
+// TransferTxResult contains the transfer API output parameters
 type TransferTxResult struct {
 	Transfer    Transfer `json:"transfer"`
 	FromAccount Account  `json:"from_account"`

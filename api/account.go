@@ -68,7 +68,7 @@ func (server *Server) getAccount(ctx *gin.Context) {
 }
 
 type listAccountRequest struct {
-	PageId   int32 `form:"page_id" binding:"required,min=1"`
+	PageID   int32 `form:"page_id" binding:"required,min=1"`
 	PageSize int32 `form:"page_size" binding:"required,min=1,max=10"`
 }
 
@@ -81,7 +81,7 @@ func (server *Server) listAccount(ctx *gin.Context) {
 
 	arg := db.ListAccountsParams{
 		Limit:  req.PageSize,
-		Offset: (req.PageId - 1) * req.PageSize,
+		Offset: (req.PageID - 1) * req.PageSize,
 	}
 
 	accounts, err := server.store.ListAccounts(ctx, arg)
